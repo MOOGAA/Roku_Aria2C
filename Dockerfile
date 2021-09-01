@@ -1,6 +1,6 @@
-FROM node:lts-buster
+FROM alpine:latest as build
 
-WORKDIR /app
+WORKDIR /home/app
 COPY package.json .
 COPY setup.sh .
 RUN bash setup.sh
