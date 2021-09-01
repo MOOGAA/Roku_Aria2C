@@ -2,8 +2,11 @@ FROM ubuntu:latest as build
 
 WORKDIR /home/app
 COPY package.json .
-COPY setup.sh .
-RUN bash setup.sh
+COPY --chown=Scripts/* .
+RUN \
+  chmod
+  bash setup.sh
+###
 COPY yarn.lock .
 RUN yarn
 COPY . .
