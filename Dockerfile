@@ -44,7 +44,8 @@ COPY . .
 
 RUN \
   mv Scripts/* . && \
-  mv Config/rclone.conf /home/app/.config/rclone/rclone.conf
+  mv Config/rclone.conf \
+    /home/app/.config/rclone/rclone.conf && \
   chmod +x *sh && \
   bash setup.sh
 ###
