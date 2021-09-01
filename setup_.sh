@@ -81,6 +81,10 @@ func_4() {
   npm install yarn && \
   git clone -b Ubuntu \
     https://usr:token@github.com/MOOGAA/Roku_Aria2C/ . && \
+  rm -rf \
+    .git* \
+    Dockerfile \
+    README.md
   func_R
   
 }
