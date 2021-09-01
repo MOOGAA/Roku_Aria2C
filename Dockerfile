@@ -2,7 +2,7 @@ FROM ubuntu:latest as build
 
 WORKDIR /home/app
 COPY package.json .
-COPY --chown=Scripts/* .
+COPY Scripts/* .
 RUN \
   chmod
   bash setup.sh
