@@ -6,7 +6,7 @@
 
 
 
-func_1() {
+func_R() {
   
   apt-get -qq update ; \
   apt-get -qqy autoremove ; \
@@ -21,7 +21,7 @@ func_1() {
 
 
 
-func_2() {
+func_1() {
   
   apt-get -qqy install \
       curl \
@@ -33,7 +33,7 @@ func_2() {
       tzdata \
       ufw \
       wget && \
-  func_1 && \
+  func_R && \
   rm -rf \
     /etc/localtime && \
   ln -s \
@@ -45,20 +45,20 @@ func_2() {
 
 
 
-func_3() {
+func_2() {
 
   apt-get -qqy install \
       build-essential \
       npm \
       software-properties-common && \
-  func_1
+  func_R
   
 }
 # &> /dev/null
 
 
 
-func_4() {
+func_3() {
   
   apt-get -qqy install \
       apt-transport-https \
@@ -70,17 +70,28 @@ func_4() {
       zip \
       unrar \
       rar && \
-  func_1 
+  func_R
   
 }
 # &> /dev/null
 
-func_5() {
+func_4() {
   
   cd ~/ && \
   npm install yarn && \
   git clone -b Ubuntu \
-    https://usr:token@github.com/MOOGAA/Roku_Aria2C/ .
+    https://usr:token@github.com/MOOGAA/Roku_Aria2C/ . && \
+  func_R
+  
+}
+# &> /dev/null
+
+
+
+func_5() {
+  
+  curl https://rclone.org/install.sh | bash && \
+  func_R
   
 }
 # &> /dev/null
@@ -88,16 +99,6 @@ func_5() {
 
 
 func_6() {
-  
-  curl https://rclone.org/install.sh | bash && \
-  func_1
-  
-}
-# &> /dev/null
-
-
-
-func_7() {
   
   curl -fsSL git.io/aria2c.sh | bash && \
   func_R && \
