@@ -19,6 +19,5 @@ if [[ -n /home/app/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; than
 fi
 
 echo "rpc-secret=$ARIA2C_PASSWD" >> aria2c.conf
-./setup_.sh
 aria2c --conf-path=aria2c.conf &
 yarn start
