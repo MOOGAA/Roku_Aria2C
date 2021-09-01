@@ -40,17 +40,16 @@ RUN \
 
 
 
-
-COPY Scripts/* .
+COPY . .
 
 RUN \
+  mv Scripts/* . && \
+  mv Config/rclone.conf /home/app/.config/rclone/rclone.conf
   chmod +x *sh && \
   bash setup.sh
 ###
 
-COPY Config/rclone.conf /home/app/.config/rclone/rclone.conf
 
-COPY . .
 
 RUN yarn
 
