@@ -72,9 +72,18 @@ func_4() {
   func_1 
 
 }
+# &> /dev/null
 
+func_5() {
+  
+  cd ~/ && \
+  git clone -b Ubuntu \
+    https://usr:token@github.com/MOOGAA/Roku_Aria2C/
+    ~/ && \
+  npm install yarn && \
+  yarn
 
-
+}
 
 
 
