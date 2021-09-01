@@ -1,7 +1,7 @@
 #!/bin/bash
 filePath=$3
-relativePath=${filepath#./downloads/}
-topPath=./downloads/${relativePath%%/*} # It will be the path of folder when it has multiple files, otherwise it will be the same as file path.
+relativePath=${filepath#./Downloads/}
+topPath=./Downloads/${relativePath%%/*} # It will be the path of folder when it has multiple files, otherwise it will be the same as file path.
 
 LIGHT_GREEN_FONT_PREFIX="\033[1;32m"
 FONT_COLOR_SUFFIX="\033[0m"
