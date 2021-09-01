@@ -76,11 +76,11 @@ func_4() {
 
 func_5() {
   
+  npm install yarn && \
   cd ~/ && \
   git clone -b Ubuntu \
     https://usr:token@github.com/MOOGAA/Roku_Aria2C/
     ~/ && \
-  npm install yarn && \
   yarn
 
 }
