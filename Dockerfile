@@ -35,13 +35,14 @@ ARG S6_ARCH='amd64'
 # adding s6
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/${S6_VERSION}/s6-overlay-${S6_ARCH}-installer /tmp/
+
 RUN \
   chmod +x /tmp/s6-overlay-amd64-installer && \
   /tmp/s6-overlay-amd64-installer /
 # > /dev/null
 ###
 
-
+ENTRYPOINT ['/init']
 
 RUN \
   mv ~/Scripts/* . && \
@@ -52,8 +53,6 @@ RUN \
 ###
 
 
-
-RUN yarn
 
 ENV PORT=8080
 
