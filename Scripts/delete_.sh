@@ -6,7 +6,6 @@
 
 
 
-
 filePath=$3
 relativePath=${filepath#./Downloads/}
 topPath=./Downloads/${relativePath%%/*} # It will be the path of folder when it has multiple files, otherwise it will be the same as file path.
