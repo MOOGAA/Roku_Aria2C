@@ -48,6 +48,8 @@ RUN \
 
 ENTRYPOINT ['/init']
 
+COPY . .
+
 RUN \
   mv ~/Scripts/* . && \
   mv ~/Config/rclone.conf \
