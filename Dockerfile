@@ -7,6 +7,8 @@
 
 FROM ubuntu:latest as build
 
+
+
 WORKDIR /home/app/
 
 
@@ -32,14 +34,16 @@ ADD https://github.com/just-containers/s6-overlay/releases/download/${S6_VERSION
 RUN \
   chmod +x /tmp/s6-overlay-amd64-installer && \
   /tmp/s6-overlay-amd64-installer /
+# > /dev/null
 ###
 
 
 
 
 COPY Scripts/* .
+
 RUN \
-  chmod +x *sh
+  chmod +x *sh && \
   bash setup.sh
 ###
 
