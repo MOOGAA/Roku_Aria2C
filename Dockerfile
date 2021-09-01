@@ -5,7 +5,8 @@
 
 
 
-FROM ubuntu:latest as build
+FROM ubuntu:latest
+# as build
 
 
 
