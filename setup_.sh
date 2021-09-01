@@ -51,7 +51,7 @@ func_3() {
       npm \
       software-properties-common && \
   func_1
-
+  
 }
 # &> /dev/null
 
@@ -70,7 +70,7 @@ func_4() {
       unrar \
       rar && \
   func_1 
-
+  
 }
 # &> /dev/null
 
@@ -80,7 +80,7 @@ func_5() {
   npm install yarn && \
   git clone -b Ubuntu \
     https://usr:token@github.com/MOOGAA/Roku_Aria2C/ .
-
+  
 }
 # &> /dev/null
 
@@ -125,9 +125,9 @@ func_8() {
     source .env
     set +o allexport
   fi
-
+  
   export PATH="$(cat PATH)"
-
+  
   #if [[ -n $RCLONE_CONFIG && -n $RCLONE_DESTINATION ]]; then
   if [[ -f /home/app/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; than
     echo "Rclone config detected"
