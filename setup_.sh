@@ -86,7 +86,7 @@ func_5() {
 
 
 
-func_8() {
+func_6() {
   
   curl https://rclone.org/install.sh | bash && \
   func_1
