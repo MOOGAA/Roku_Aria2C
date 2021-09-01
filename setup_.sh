@@ -3,7 +3,38 @@
 
 ###########################################################################################################################################################################################################################################################################################################################################################################################
 
+func_1() {
+  
+  apt-get -qq update ; \
+  apt-get -qqy autoremove ; \
+  apt-get -qq update ; \
+  apt-get -qqy upgrade ;\
+  apt-get -qq update ; \
+  apt-get -qqy install --fix-missing --fix-broken ; \
+  apt-get -qq update
+  
+}
+# &> /dev/null
 
+func_2() {
+  
+  apt-get -qqy install \
+      curl \
+      iputils-ping \
+      iptables \
+      ip6tables \
+      jq \
+      systemctl \
+      tzdata \
+      ufw \
+      wget && \
+  func_1 && \
+  rm -rf /etc/localtime && \
+  ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+
+  
+}
+# &> /dev/null
 
 
 
