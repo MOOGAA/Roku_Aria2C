@@ -84,6 +84,9 @@ func_5() {
   yarn
 
 }
+# &> /dev/null
+
+
 
 func_8() {
   
