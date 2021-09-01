@@ -96,7 +96,6 @@ func_6() {
 
 
 
-
 func_7() {
   
   curl -fsSL git.io/aria2c.sh | bash && \
@@ -114,6 +113,33 @@ func_7() {
   echo $PATH > PATH
   
 }
+# &> /dev/null
+
+
+
+func_8() {
+  
+  if [ -f .env ]; then
+  echo "   ⟩   .env file found, sourcing it "
+    set -o allexport
+    source .env
+    set +o allexport
+  fi
+
+  export PATH="$(cat PATH)"
+
+  #if [[ -n $RCLONE_CONFIG && -n $RCLONE_DESTINATION ]]; then
+  if [[ -f /home/app/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; than
+    echo "Rclone config detected"
+    echo "on-download-stop=~/Scripts/delete_.sh" >> aria2c.conf
+    echo "on-download-complete=~/Scripts/on-complete_.sh" >> aria2c.conf
+    chmod +x ~/Scripts/delete.sh
+    chmod +x ~/Scripts/on-complete.sh
+  fi
+  
+}
+# &> /dev/null
+
 
 
 
