@@ -64,7 +64,7 @@ func_3() {
   apt-get -qqy install \
       apt-transport-https \
       git \
-      gnupg2 \
+      openssl \
       tar \
       unzip \
       zip \
