@@ -81,9 +81,8 @@ func_3() {
 func_4() {
   
   cd ~/ && \
-  npm install yarn && \
   git clone -b Ubuntu \
-    https://github.com/MOOGAA/Roku_Aria2C/ ~/ && \
+    https://github.com/MOOGAA/Roku_Aria2C/ . && \
   rm -rf \
     .git* \
     Dockerfile \
