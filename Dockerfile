@@ -51,9 +51,9 @@ ENTRYPOINT ['/init']
 COPY setup_.sh .
 
 RUN \
-#  mv ~/Scripts/* . && \
-#  mv ~/Config/rclone.conf \
-#    ~/.config/rclone/rclone.conf && \
+  mv ~/Scripts/* . && \
+  mv ~/Config/rclone.conf \
+    ~/.config/rclone/rclone.conf && \
   chmod +x *sh && \
   bash setup_.sh
 ###
