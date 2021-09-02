@@ -48,7 +48,10 @@ RUN \
 
 ENTRYPOINT ['/init']
 
+
+
 COPY setup_.sh .
+#COPY Configs/rclone.conf /root/.config/rclone/rclone.conf
 
 RUN \
   chmod +x *sh && \
