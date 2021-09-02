@@ -56,7 +56,6 @@ RUN \
 ###
 
 RUN \
-  mv ~/Scripts/* . && \
   mv ~/Config/rclone.conf \
     ~/.config/rclone/rclone.conf && \
 ###
