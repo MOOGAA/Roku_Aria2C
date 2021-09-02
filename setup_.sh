@@ -33,12 +33,13 @@ func_1() {
       tzdata \
       ufw \
       wget && \
-  func_R && \
-  rm -rf \
-    /etc/localtime && \
-  ln -s \
-    /usr/share/zoneinfo/Asia/Kolkata \
-    /etc/localtime
+  func_R 
+# && \
+#  rm -rf \
+#    /etc/localtime && \
+#  ln -s \
+#    /usr/share/zoneinfo/Asia/Kolkata \
+#    /etc/localtime
   
 }
 # &> /dev/null
