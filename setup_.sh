@@ -115,7 +115,7 @@ func_5() {
 
 
 
-func_8() {
+func_6() {
   
   if [ -f .env ]; then
   echo "   ⟩   .env file found, sourcing it "
