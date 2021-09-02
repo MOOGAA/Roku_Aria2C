@@ -60,7 +60,7 @@ RUN \
 
 RUN \
   mv ~/Config/rclone.conf \
-    ~/.config/rclone/rclone.conf && \
+    ~/.config/rclone/rclone.conf
 ###
 
 
