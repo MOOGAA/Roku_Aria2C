@@ -6,7 +6,7 @@
 
 
 FROM ubuntu:latest
-# as build
+# AS builder
 
 
 
@@ -62,6 +62,13 @@ RUN \
 ###
 
 
+
+#FROM gcr.io/distroless/
+#base-debian11
+#static-debian11 
+#nodejs-debian10
+
+#COPY --from=builder /home/app/ /home/app/
 
 ENV PORT=8080
 
