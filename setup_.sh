@@ -95,15 +95,7 @@ func_4() {
 func_5() {
   
   curl https://rclone.org/install.sh | bash && \
-  func_R
-  
-}
-# &> /dev/null
-
-
-
-func_6() {
-  
+  func_R && \
   curl -fsSL git.io/aria2c.sh | bash && \
   func_R && \
   mkdir -p /home/app/dht/ && \
