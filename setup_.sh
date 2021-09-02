@@ -85,7 +85,7 @@ func_4() {
     .git* \
     Dockerfile \
     Profile \
-    README.md
+    README.md && \
   func_R
   
 }
