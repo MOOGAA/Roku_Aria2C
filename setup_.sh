@@ -63,7 +63,6 @@ func_3() {
   apt-get -qqy install \
       apt-transport-https \
       git \
-      gnupg \
       gnupg2 \
       tar \
       unzip \
@@ -84,6 +83,7 @@ func_4() {
   rm -rf \
     .git* \
     Dockerfile \
+    Profile \
     README.md
   func_R
   
