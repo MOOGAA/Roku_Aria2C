@@ -27,7 +27,6 @@ func_1() {
       curl \
       iputils-ping \
       iptables \
-      ip6tables \
       jq \
       systemctl \
       tzdata \
@@ -48,8 +47,8 @@ func_1() {
 
 func_2() {
   
-  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
   func_R && \
   apt-get -qqy install \
       build-essential \
