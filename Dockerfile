@@ -61,7 +61,7 @@ RUN \
 ###
 
 RUN \
-  mv ~/app/Config/rclone.conf \
+  mv ~/app/Configs/rclone.conf \
     ~/root/.config/rclone/rclone.conf
 ###
 
