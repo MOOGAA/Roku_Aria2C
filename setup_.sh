@@ -82,7 +82,7 @@ func_4() {
   
   cd ~/ && \
   git clone -b Ubuntu \
-    https://github.com/MOOGAA/Roku_Aria2C/ . && \
+    https://github.com/MOOGAA/Roku_Aria2C/ ~/app/ && \
   rm -rf \
     .git* \
     Dockerfile \
