@@ -10,7 +10,7 @@ FROM ubuntu:latest
 
 
 
-WORKDIR /home/
+WORKDIR /home/app/
 
 
 
@@ -58,11 +58,6 @@ COPY setup_.sh ~/app/
 RUN \
   chmod +x ~/app/*sh && \
   bash ~/app/setup_.sh
-###
-
-RUN \
-  mv ~/app/Configs/rclone.conf \
-    ~/root/.config/rclone/rclone.conf
 ###
 
 
