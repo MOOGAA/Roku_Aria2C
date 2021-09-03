@@ -86,10 +86,9 @@ func_3() {
 
 func_4() {
   
-  cd ~/ && \
   git clone -b Ubuntu \
-    https://github.com/MOOGAA/Roku_Aria2C/ ~/app/ && \
-  cd ~/app/ && \
+    https://github.com/MOOGAA/Roku_Aria2C/ /tmp/ && \
+  cd /tmp/ && \
     rm -rf \
       .git* \
       Dockerfile \
@@ -104,12 +103,14 @@ func_4() {
 
 func_5() {
   
+  cd && \
   curl https://rclone.org/install.sh | bash && \
   func_R && \
   curl -fsSL git.io/aria2c.sh | bash && \
   func_R && \
   mkdir -p /home/app/dht/ && \
   mkdir -p /home/app/Downloads/ && \
+  rclone move /tmp/ ~/app/ && \
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
       ~/app/dht/ && \
@@ -127,7 +128,7 @@ func_5() {
 
 func_6() {
   
-  ~/app/ && \
+  cd && \
   if [ -f .env ]; then
   echo "   ⟩   .env file found, sourcing it "
     set -o allexport
@@ -137,7 +138,7 @@ func_6() {
   
   export PATH="$(cat PATH)"
   
-  if [[ -f ~/app/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
+  if [[ -f /root/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
     echo "Rclone config detected"
     echo "on-download-stop=~/app/Scripts/delete_.sh" >> ~/app/aria2c.conf
     echo "on-download-complete=~/app/Scripts/on-complete_.sh" >> ~/app/aria2c.conf
