@@ -130,7 +130,7 @@ func_6() {
   export PATH="$(cat PATH)"
   
   # if [[ -n $RCLONE_CONFIG && -n $RCLONE_DESTINATION ]]; then
-  if [[ -f /home/app/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; than
+  if [[ -f /home/app/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
     echo "Rclone config detected"
     echo "on-download-stop=~/Scripts/delete_.sh" >> aria2c.conf
     echo "on-download-complete=~/Scripts/on-complete_.sh" >> aria2c.conf
