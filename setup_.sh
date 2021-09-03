@@ -87,8 +87,8 @@ func_3() {
 func_4() {
   
   git clone -b Ubuntu \
-    https://github.com/MOOGAA/Roku_Aria2C/ /tmp/ && \
-  cd /tmp/ && \
+    https://github.com/MOOGAA/Roku_Aria2C/ /tmp/Roku/ && \
+  cd /tmp/Roku/ && \
     rm -rf \
       .git* \
       Dockerfile \
@@ -108,9 +108,9 @@ func_5() {
   func_R && \
   curl -fsSL git.io/aria2c.sh | bash && \
   func_R && \
-  mkdir -p /dht/ && \
-  mkdir -p /Downloads/ && \
-  mv /tmp/* ~/ && \
+  mkdir ./dht/ && \
+  mkdir ./Downloads/ && \
+  mv /tmp/Roku/* . && \
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
       ~/dht/ && \
