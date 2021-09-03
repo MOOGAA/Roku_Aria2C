@@ -108,17 +108,17 @@ func_5() {
   func_R && \
   curl -fsSL git.io/aria2c.sh | bash && \
   func_R && \
-  mkdir -p /home/app/dht/ && \
-  mkdir -p /home/app/Downloads/ && \
-  mv /tmp/* ~/app/ && \
+  mkdir -p /dht/ && \
+  mkdir -p /Downloads/ && \
+  mv /tmp/* ~/ && \
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
-      ~/app/dht/ && \
+      ~/dht/ && \
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat \
-      ~/app/dht/ && \
+      ~/dht/ && \
   tracker_list=`curl -Ns https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt | awk '$1' | tr '\n' ',' | cat`
-  echo "bt-tracker=$tracker_list" >> ~/app/aria2c.conf && \
+  echo "bt-tracker=$tracker_list" >> ~/aria2c.conf && \
   echo $PATH > PATH
   
 }
@@ -140,10 +140,10 @@ func_6() {
   
   if [[ -f /root/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
     echo "Rclone config detected"
-    echo "on-download-stop=~/app/Scripts/delete_.sh" >> ~/app/aria2c.conf
-    echo "on-download-complete=~/app/Scripts/on-complete_.sh" >> ~/app/aria2c.conf
-    chmod +x ~/app/Scripts/delete.sh
-    chmod +x ~/app/Scripts/on-complete.sh
+    echo "on-download-stop=~/app/Scripts/delete_.sh" >> ~/aria2c.conf
+    echo "on-download-complete=~/app/Scripts/on-complete_.sh" >> ~/aria2c.conf
+    chmod +x ~/Scripts/delete.sh
+    chmod +x ~/Scripts/on-complete.sh
   fi
   
 }
