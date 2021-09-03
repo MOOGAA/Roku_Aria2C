@@ -10,7 +10,7 @@ FROM ubuntu:latest
 
 
 
-WORKDIR /home/app/
+WORKDIR /home/
 
 
 
@@ -18,7 +18,7 @@ WORKDIR /home/app/
 
 ENV \
   DEBIAN_FRONTEND='noninteractive' \
-  HOME=/home/app/ \
+  HOME=/home/ \
   LANG='en_US.UTF-8' \
   LANGUAGE='en_US.UTF-8' \
   TERM='xterm' \
@@ -50,17 +50,17 @@ ENTRYPOINT ['/init']
 
 
 
-COPY setup_.sh .
+COPY setup_.sh ~/app/
 #COPY Configs/rclone.conf /root/.config/rclone/rclone.conf
 
 RUN \
-  chmod +x *sh && \
-  bash setup_.sh
+  chmod +x ~/app/*sh && \
+  bash ~/app/setup_.sh
 ###
 
 RUN \
-  mv ~/Config/rclone.conf \
-    ~/.config/rclone/rclone.conf
+  mv ~/app/Config/rclone.conf \
+    ~/root/.config/rclone/rclone.conf
 ###
 
 
@@ -70,7 +70,7 @@ RUN \
 #static-debian11 
 #nodejs-debian10
 
-#COPY --from=builder /home/app/ /home/app/
+#COPY --from=builder / /
 
 ENV PORT=8080
 
