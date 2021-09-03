@@ -52,7 +52,6 @@ func_2() {
   func_R && \
   apt-get -qqy install \
       build-essential \
-      npm \
       software-properties-common \
       yarn && \
   func_R
@@ -83,11 +82,12 @@ func_4() {
   cd ~/ && \
   git clone -b Ubuntu \
     https://github.com/MOOGAA/Roku_Aria2C/ ~/app/ && \
-  rm -rf \
-    .git* \
-    Dockerfile \
-    Profile \
-    README.md && \
+  cd ~/app/ && \
+    rm -rf \
+      .git* \
+      Dockerfile \
+      Profile \
+      README.md && \
   func_R
   
 }
@@ -105,12 +105,12 @@ func_5() {
   mkdir -p /home/app/Downloads/ && \
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
-      ~/dht/ && \
+      ~/app/dht/ && \
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat \
-      ~/dht/ && \
+      ~/app/dht/ && \
   tracker_list=`curl -Ns https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt | awk '$1' | tr '\n' ',' | cat`
-  echo "bt-tracker=$tracker_list" >> aria2c.conf && \
+  echo "bt-tracker=$tracker_list" >> ~/app/aria2c.conf && \
   echo $PATH > PATH
   
 }
@@ -120,6 +120,7 @@ func_5() {
 
 func_6() {
   
+  ~/app/ && \
   if [ -f .env ]; then
   echo "   ⟩   .env file found, sourcing it "
     set -o allexport
@@ -129,12 +130,12 @@ func_6() {
   
   export PATH="$(cat PATH)"
   
-  if [[ -f /home/app/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
+  if [[ -f ~/app/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
     echo "Rclone config detected"
-    echo "on-download-stop=~/Scripts/delete_.sh" >> aria2c.conf
-    echo "on-download-complete=~/Scripts/on-complete_.sh" >> aria2c.conf
-    chmod +x ~/Scripts/delete.sh
-    chmod +x ~/Scripts/on-complete.sh
+    echo "on-download-stop=~/app/Scripts/delete_.sh" >> ~/app/aria2c.conf
+    echo "on-download-complete=~/app/Scripts/on-complete_.sh" >> ~/app/aria2c.conf
+    chmod +x ~/app/Scripts/delete.sh
+    chmod +x ~/app/Scripts/on-complete.sh
   fi
   
 }
