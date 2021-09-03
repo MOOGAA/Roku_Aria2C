@@ -110,7 +110,7 @@ func_5() {
   func_R && \
   mkdir -p /home/app/dht/ && \
   mkdir -p /home/app/Downloads/ && \
-  rclone move /tmp/ ~/app/ && \
+  mv /tmp/* ~/app/ && \
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
       ~/app/dht/ && \
