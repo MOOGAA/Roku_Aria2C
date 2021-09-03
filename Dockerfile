@@ -52,12 +52,12 @@ ENTRYPOINT ['/init']
 
 
 
-COPY setup_.sh ~/app/
+COPY setup_.sh .
 #COPY Configs/rclone.conf /root/.config/rclone/rclone.conf
 
 RUN \
-  chmod +x ~/app/*sh && \
-  bash ~/app/setup_.sh
+  chmod +x ./*sh && \
+  bash ./setup_.sh
 ###
 
 
