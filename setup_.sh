@@ -86,45 +86,36 @@ func_3() {
 
 func_4() {
   
+  cd
+  curl https://rclone.org/install.sh | bash
+  func_R
+  curl -fsSL git.io/aria2c.sh | bash
+  func_R
+  mkdir ./dht/ ./Downloads/
+  wget -q \
+    https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
+      ~/dht/
+  wget -q \
+    https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat \
+      ~/dht/
+  tracker_list=`curl -Ns https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt | awk '$1' | tr '\n' ',' | cat`
+  echo "bt-tracker=$tracker_list" >> ~/aria2c.conf
   git clone -b Ubuntu \
-    https://github.com/MOOGAA/Roku_Aria2C/ /tmp/Roku/ && \
+    https://github.com/MOOGAA/Roku_Aria2C/ /tmp/Roku/
   cd /tmp/Roku/ && \
     rm -rf \
       .git* \
       Dockerfile \
       Profile \
-      README.md && \
-    chmod +x ./Scripts/* && \
-  func_R
-  
-}
-# &> /dev/null
-
-
-
-func_5() {
-  
-  cd && \
-  curl https://rclone.org/install.sh | bash && \
-  func_R && \
-  curl -fsSL git.io/aria2c.sh | bash && \
-  func_R && \
-  mkdir ./dht/ && \
-  mkdir ./Downloads/ && \
-  mv /tmp/Roku/* . && \
+      README.md
+    chmod +x ./Scripts/*
+  mv /tmp/Roku/* .
   mv ./Configs/rclone.conf \
-    /root/.config/rclone/ && \
-  rm -rf /tmp/* && \
-  rm -rf ./Configs && \
-  wget -q \
-    https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
-      ~/dht/ && \
-  wget -q \
-    https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat \
-      ~/dht/ && \
-  tracker_list=`curl -Ns https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt | awk '$1' | tr '\n' ',' | cat`
-  echo "bt-tracker=$tracker_list" >> ~/aria2c.conf && \
-  echo $PATH > PATH
+    /root/.config/rclone/
+  rm -rf \
+    /tmp/* \
+    ./Configs
+  func_R
   
 }
 # &> /dev/null
@@ -133,7 +124,7 @@ func_5() {
 
 func_6() {
   
-  cd && \
+  cd
   if [ -f .env ]; then
   echo "   ⟩   .env file found, sourcing it "
     set -o allexport
@@ -141,6 +132,7 @@ func_6() {
     set +o allexport
   fi
   
+  echo $PATH > PATH
   export PATH="$(cat PATH)"
   
   if [[ -f /root/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
