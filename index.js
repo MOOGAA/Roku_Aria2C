@@ -4,11 +4,10 @@ const express = require('express')
 const request = require('request')
 const httpsrv = require('httpsrv')
 const fs = require('fs')
-const SECRET = $ARIA2C_PASSWD
-/*const SECRET = /rpc-secret=(.*)/.exec(
+const SECRET = /rpc-secret=(.*)/.exec(
 	fs.readFileSync('aria2c.conf', 'utf-8')
 )[1]
-*/
+
 const ENCODED_SECRET = Buffer.from(SECRET).toString('base64')
 
 const PORT = process.env.PORT || 1234
