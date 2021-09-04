@@ -96,7 +96,7 @@ func_4() {
       -O ./.aria2/dht.dat
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat \
-      -O ./aria2/dht6.dat
+      -O ./.aria2/dht6.dat
   git clone -b Ubuntu \
     https://github.com/MOOGAA/Roku_Aria2C/ \
       /tmp/Roku/
