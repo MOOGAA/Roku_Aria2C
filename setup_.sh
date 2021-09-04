@@ -31,6 +31,7 @@ func_1() {
   
   apt-get -qqy install \
       curl \
+      gnupg2 \
       iputils-ping \
       iptables \
       jq \
@@ -58,7 +59,6 @@ func_2() {
   func_R
   apt-get -qqy install \
       build-essential \
-      gnupg2 \
       software-properties-common \
       yarn
   func_R
