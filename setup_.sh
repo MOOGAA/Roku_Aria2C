@@ -90,7 +90,7 @@ func_4() {
   func_R
   curl -fsSL git.io/aria2c.sh | bash
   func_R
-  mkdir ./dht/ ./Downloads/
+  mkdir ./.aria2/ ./Downloads/
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
       -O ./.aria2/dht.dat
