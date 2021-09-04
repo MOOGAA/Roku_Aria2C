@@ -27,12 +27,12 @@ app.use('/jsonrpc', (req, res) => {
 	req.pipe(request('http://127.0.0.1:6800/jsonrpc')).pipe(res)
 })
 app.use(
-	'/downloads/' + ENCODED_SECRET,
+	'/Downloads/' + ENCODED_SECRET,
 	httpsrv({
-		basedir: __dirname + '/downloads'
+		basedir: __dirname + '/Downloads'
 	})
 )
-app.use('/ariang', express.static(__dirname + '/ariang'))
+app.use('/ariang', express.static(__dirname + '/ariang/'))
 app.get('/', (req, res) => {
 	res.send(`
 <label for="secret">Enter your aria2 secret:</label>
@@ -44,7 +44,7 @@ panel.onclick=function(){
 	open('/ariang/#!/settings/rpc/set/wss/'+location.hostname+'/443/jsonrpc/'+btoa(secret.value),'_blank')
 }
 downloads.onclick=function(){
-	open('/downloads/'+btoa(secret.value)+'/')
+	open('/Downloads/'+btoa(secret.value)+'/')
 }
 </script>
 `)
