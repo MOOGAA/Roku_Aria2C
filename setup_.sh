@@ -100,13 +100,13 @@ func_4() {
   git clone -b Ubuntu \
     https://github.com/MOOGAA/Roku_Aria2C/ \
       /tmp/Roku/
+  chmod +x /tmp/Roku/Scripts/*
   cd /tmp/Roku/ && \
     rm -rf \
       .git* \
       Dockerfile \
       Profile \
       README.md
-    chmod +x ./Scripts/*
   func_R
   
 }
@@ -116,7 +116,7 @@ func_5 () {
   
   cd
   mv /tmp/Roku/* .
-  mv ./Configs/rclone.conf \
+  mv ./Configs/* \
     /root/.config/rclone/
   
   rm -rf \
