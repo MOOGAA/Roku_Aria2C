@@ -18,7 +18,7 @@ WORKDIR /home/app/
 
 ENV \
   DEBIAN_FRONTEND='noninteractive' \
-  HOME=/home/ \
+  HOME=/home/app/ \
   LANG='en_US.UTF-8' \
   LANGUAGE='en_US.UTF-8' \
   TERM='xterm' \
@@ -53,6 +53,7 @@ ENTRYPOINT ['/init']
 
 
 COPY setup_.sh .
+
 #COPY Configs/rclone.conf /root/.config/rclone/rclone.conf
 
 RUN \
@@ -64,14 +65,14 @@ CMD ["bash", "start.sh"]
 
 
 
-FROM gcr.io/distroless/nodejs-debian10
+#FROM gcr.io/distroless/nodejs-debian10
 #base-debian11
 #static-debian11 
 #
 
-COPY --from=builder /root/ /root/
+#COPY --from=builder /root/ /root/
 
-COPY --from=builder /home/ /home/
+#COPY --from=builder /home/ /home/
 
 ENV PORT=8080
 
