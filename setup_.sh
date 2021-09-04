@@ -93,10 +93,10 @@ func_4() {
   mkdir ./dht/ ./Downloads/
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
-      -O ./dht/dht.dat
+      -O ./.aria2/dht.dat
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat \
-      -O ./dht/dht6.dat
+      -O ./aria2/dht6.dat
   git clone -b Ubuntu \
     https://github.com/MOOGAA/Roku_Aria2C/ \
       /tmp/Roku/
@@ -107,21 +107,25 @@ func_4() {
       Profile \
       README.md
     chmod +x ./Scripts/*
-  cd
-  mv /tmp/Roku/* .
-  mv ./Configs/rclone.conf \
-    /root/.config/rclone/
-  rm -rf \
-    /tmp/* \
-    ./Configs
-  echo $PATH > PATH
-  export PATH="$(cat PATH)"
   func_R
   
 }
 # &> /dev/null
 
-
+func_5 () {
+  
+  cd
+  mv /tmp/Roku/* .
+  mv ./Configs/rclone.conf \
+    /root/.config/rclone/
+  
+  rm -rf \
+    /tmp/* \
+    ./Configs
+  echo $PATH > PATH
+  export PATH="$(cat PATH)"
+  
+}
 
 func_6() {
   
