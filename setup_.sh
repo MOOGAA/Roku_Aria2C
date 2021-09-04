@@ -90,7 +90,7 @@ func_4() {
   func_R
   curl -fsSL git.io/aria2c.sh | bash
   func_R
-  mkdir -p ./.aria2/ ./Downloads/ /root/.config/rclone/
+  mkdir -p ./.aria2/ ./Downloads/ /root/.config/
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
       -O ./.aria2/dht.dat
@@ -117,7 +117,7 @@ func_5 () {
   cd
   mv /tmp/Roku/* .
   mv ./Configs/* \
-    /root/.config/rclone/
+    /root/.config/
   
   rm -rf \
     /tmp/* \
