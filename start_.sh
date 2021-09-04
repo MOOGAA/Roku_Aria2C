@@ -24,7 +24,7 @@ if [[ -f /root/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
 echo $PATH > PATH
 export PATH="$(cat PATH)"
 
-echo "rpc-secret=$ARIA2C_PASSWD" >> ./.aria2/aria2c.conf && \
+echo "rpc-secret=$ARIA2C_PASSWD" >> ./.aria2/aria2c.conf
 rclone tree -a ~/ && \
 aria2c --conf-path=./.aria2/aria2c.conf &
 yarn start
