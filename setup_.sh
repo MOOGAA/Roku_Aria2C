@@ -21,7 +21,6 @@ func_R() {
   apt-get -qqy upgrade && \
   apt-get -qqy install --fix-missing --fix-broken && \
   apt-get -qq update
-   
   
 }
 # &> /dev/null
@@ -59,6 +58,7 @@ func_2() {
   func_R && \
   apt-get -qqy install \
       build-essential \
+      gnupg2 \
       software-properties-common \
       yarn && \
   func_R
@@ -94,6 +94,7 @@ func_4() {
       Dockerfile \
       Profile \
       README.md && \
+    chmod +x ./Scripts/* && \
   func_R
   
 }
@@ -111,6 +112,10 @@ func_5() {
   mkdir ./dht/ && \
   mkdir ./Downloads/ && \
   mv /tmp/Roku/* . && \
+  mv ./Configs/rclone.conf \
+    /root/.config/rclone/ && \
+  rm -rf /tmp/* && \
+  rm -rf ./Configs && \
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
       ~/dht/ && \
@@ -140,10 +145,9 @@ func_6() {
   
   if [[ -f /root/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
     echo "Rclone config detected"
-    echo "on-download-stop=~/Scripts/delete_.sh" >> ~/aria2c.conf
-    echo "on-download-complete=~/Scripts/on-complete_.sh" >> ~/aria2c.conf
-    chmod +x ~/Scripts/delete.sh
-    chmod +x ~/Scripts/on-complete.sh
+    echo "on-download-stop=./Scripts/delete_.sh" >> ./aria2c.conf
+    echo "on-download-complete=./Scripts/on-complete_.sh" >> ./aria2c.conf
+    
   fi
   
 }
@@ -157,7 +161,13 @@ func_2 && \
 func_3 && \
 func_4 && \
 func_5 && \
-func_6
+func_6 && \
+echo """
+
+   ⟩ Done   ---   ---   ---
+
+
+"""
 
 
 ###########################################################################################################################################################################################################################################################################################################################################################################################
