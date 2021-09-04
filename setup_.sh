@@ -116,7 +116,7 @@ func_5 () {
   
   cd
   mv /tmp/Roku/* .
-  mv ./Configs/rclone/* \
+  mv ./Configs/* \
     /root/.config/
   rm -rf \
     /tmp/* \
