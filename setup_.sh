@@ -118,12 +118,9 @@ func_5 () {
   mv /tmp/Roku/* .
   mv ./Configs/rclone/* \
     /root/.config/
-  
   rm -rf \
     /tmp/* \
     ./Configs
-  echo $PATH > PATH
-  export PATH="$(cat PATH)"
   
 }
 
