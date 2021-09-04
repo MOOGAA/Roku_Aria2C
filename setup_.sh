@@ -132,10 +132,10 @@ func_6() {
   cd
   if [[ -f /root/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
     echo "Rclone config detected"
-    echo "on-download-stop=./Scripts/delete_.sh" >> ./aria2c.conf
-    echo "on-download-complete=./Scripts/on-complete_.sh" >> ./aria2c.conf
+    echo "on-download-stop=./Scripts/delete_.sh" >> ./.aria2/aria2c.conf
+    echo "on-download-complete=./Scripts/on-complete_.sh" >> ./.aria2/aria2c.conf
     tracker_list=`curl -Ns https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt | awk '$1' | tr '\n' ',' | cat`
-    echo "bt-tracker=$tracker_list" >> ~/aria2c.conf
+    echo "bt-tracker=$tracker_list" >> ./.aria2/aria2c.conf
   fi
 
 
