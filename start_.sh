@@ -4,7 +4,7 @@
 
 ###
 
-cd
+#cd
 
 if [[ -f /root/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
     echo "Rclone config detected"
