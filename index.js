@@ -30,10 +30,10 @@ app.use('/jsonrpc', (req, res) => {
 app.use(
 	'/Downloads/' + ENCODED_SECRET,
 	httpsrv({
-		basedir: __dirname + '/Downloads/'
+		basedir: __dirname + '~/Downloads/'
 	})
 )
-app.use('/ariang', express.static(__dirname + '/ariang/'))
+app.use('/ariang', express.static(__dirname + '~/ariang/'))
 app.get('/', (req, res) => {
 	res.send(`
 <label for="secret">Enter your aria2 secret:</label>
