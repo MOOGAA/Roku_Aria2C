@@ -60,20 +60,22 @@ RUN \
   bash ./setup_.sh
 ###
 
+CMD ["bash", "start.sh"]
 
 
-#FROM gcr.io/distroless/
+
+FROM gcr.io/distroless/nodejs-debian10
 #base-debian11
 #static-debian11 
-#nodejs-debian10
+#
 
-#COPY --from=builder / /
+COPY --from=builder /root/ /root/
+
+COPY --from=builder /home/ /home/
 
 ENV PORT=8080
 
 EXPOSE 8080
-
-CMD ["bash", "start.sh"]
 
 
 
