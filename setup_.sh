@@ -74,11 +74,10 @@ func_3() {
       apt-transport-https \
       git \
       openssl \
+      rar \
       tar \
       unzip \
-      zip \
-      unrar \
-      rar && \
+      zip && \
   func_R
   
 }
