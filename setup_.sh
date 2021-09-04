@@ -93,10 +93,10 @@ func_4() {
   mkdir ./dht/ ./Downloads/
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
-      ~/dht/
+      -O ./dht/
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat \
-      ~/dht/
+      -O ./dht/
   git clone -b Ubuntu \
     https://github.com/MOOGAA/Roku_Aria2C/ \
       /tmp/Roku/
