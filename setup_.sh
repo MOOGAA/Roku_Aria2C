@@ -130,8 +130,7 @@ func_5 () {
 func_6() {
   
   cd
-
-if [[ -f /root/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
+  if [[ -f /root/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
     echo "Rclone config detected"
     echo "on-download-stop=./Scripts/delete_.sh" >> ./aria2c.conf
     echo "on-download-complete=./Scripts/on-complete_.sh" >> ./aria2c.conf
