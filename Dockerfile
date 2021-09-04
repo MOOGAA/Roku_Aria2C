@@ -48,7 +48,7 @@ RUN \
 # > /dev/null
 ###
 
-ENTRYPOINT ['/init']
+ENTRYPOINT /init
 
 
 
