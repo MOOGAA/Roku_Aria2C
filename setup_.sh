@@ -127,38 +127,12 @@ func_5 () {
   
 }
 
-func_6() {
-  
-  cd
-  if [[ -f /root/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
-    echo "Rclone config detected"
-    echo "on-download-stop=./Scripts/delete_.sh" >> ./.aria2/aria2c.conf
-    echo "on-download-complete=./Scripts/on-complete_.sh" >> ./.aria2/aria2c.conf
-    tracker_list=`curl -Ns https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt | awk '$1' | tr '\n' ',' | cat`
-    echo "bt-tracker=$tracker_list" >> ./.aria2/aria2c.conf
-  fi
-
-
-
-  if [ -f .env ]; then
-    echo "   ⟩   .env file found, sourcing it "
-    set -o allexport
-    source .env
-    set +o allexport
-  fi
-  
-}
-# &> /dev/null
-# if [[ -n $RCLONE_CONFIG && -n $RCLONE_DESTINATION ]]; then
-
-
 func_R && \
 func_1 && \
 func_2 && \
 func_3 && \
 func_4 && \
 func_5 && \
-func_6 && \
 echo """
 
    ⟩ Done   ---   ---   ---
