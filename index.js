@@ -30,10 +30,10 @@ app.use('/jsonrpc', (req, res) => {
 app.use(
 	'/Downloads/' + ENCODED_SECRET,
 	httpsrv({
-		basedir: __dirname + '~/Downloads/'
+		basedir: __dirname + '/Downloads/'
 	})
 )
-app.use('/ariang', express.static(__dirname + '~/ariang/'))
+app.use('/ariang/', express.static(__dirname + '/ariang/'))
 app.get('/', (req, res) => {
 	res.send(`
 <label for="secret">Enter your aria2 secret:</label>
@@ -59,7 +59,7 @@ if (process.env.HEROKU_APP_NAME) {
 				err ? rej(err) : res(text)
 			)
 		)
-	const APP_URL = `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`
+	const APP_URL = `http://54.165.194.62`
 	const preventIdling = () => {
 		request.post(
 			'http://127.0.0.1:6800/jsonrpc',
