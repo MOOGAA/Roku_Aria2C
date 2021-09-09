@@ -29,7 +29,7 @@
         browserNotification: false,
         rpcAlias: '',
         rpcHost: '',
-        rpcPort: '6800',
+        rpcPort: '3000',
         rpcInterface: 'jsonrpc',
         protocol: 'http',
         httpMethod: 'POST',
