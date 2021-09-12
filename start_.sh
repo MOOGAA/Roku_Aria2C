@@ -23,7 +23,7 @@ if [[ -f /root/.config/rclone/rclone.conf && -n $REMOTE_DST ]]; then
 
 echo $PATH > PATH
 export PATH="$(cat PATH)"
-
+# aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all=true
 echo "rpc-secret=$ARIA2C_PASSWD" >> ./.aria2/aria2c.conf
 rclone tree -a ~/ && \
 aria2c --conf-path=./.aria2/aria2c.conf &
