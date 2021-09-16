@@ -36,6 +36,7 @@ func_1() {
       iptables \
       jq \
       systemctl \
+      systemd \
       tzdata \
       ufw \
       wget && \
