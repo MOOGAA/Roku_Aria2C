@@ -51,6 +51,20 @@ func_1() {
 }
 # &> /dev/null
 
+func_2() {
+  
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+  func_R
+  apt-get -qqy install \
+      unzip zip unrar rar tar \
+      nodejs \
+      yarn
+  func_R
+  
+}
+# &> /dev/null
+
 
 #
 #
