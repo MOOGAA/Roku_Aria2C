@@ -81,6 +81,40 @@ func_3() {
 }
 # &> /dev/null
 
+func_4() {
+  
+  cd
+  curl https://rclone.org/install.sh | bash
+  func_R
+  curl -fsSL git.io/aria2c.sh | bash
+  func_R
+  mkdir -p \
+    ~/.config/rclone/ \
+    ~/.config/aria2c/ \
+    ~/.log/nginx/ \
+    ~/Download/
+  wget -q \
+    https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
+      -O ~/.config/aria2c/dht.dat
+  wget -q \
+    https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat \
+      -O ~/.config/aria2c/dht6.dat
+  wget -q https://github.com/mayswind/AriaNg/releases/download/1.2.2/AriaNg-1.2.2.zip \
+      -O ~/AriaNg.zip
+  unzip \
+    AriaNg.zip \
+      -d \
+        Aria-Ng
+  cd /tmp/Roku/ && \
+    rm -rf \
+      .git* \
+      Dockerfile \
+      Profile \
+      README.md
+  func_R
+  
+}
+# &> /dev/null
 
 #
 #
