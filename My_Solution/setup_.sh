@@ -105,12 +105,6 @@ func_4() {
     AriaNg.zip \
       -d \
         Aria-Ng
-  cd /tmp/Roku/ && \
-    rm -rf \
-      .git* \
-      Dockerfile \
-      Profile \
-      README.md
   func_R
   
 }
