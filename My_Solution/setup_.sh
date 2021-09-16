@@ -68,6 +68,7 @@ func_3() {
   
   apt-get -qqy install \
       apt-transport-https \
+      ca-certificates \
       git \
       openssl \
       rar \
