@@ -58,8 +58,8 @@ func_2() {
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
   func_R
   apt-get -qqy install \
-      unzip zip unrar rar tar \
-      nodejs \
+      build-essential \
+      software-properties-common \
       yarn
   func_R
   
