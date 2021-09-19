@@ -41,16 +41,12 @@ RUN \
     nano \
     wget \
     curl \
-    
+    systemctl \
+    systemd \
     git && \
-  echo '\n\
----   ---   ---\n\
----   $PORT   ---\n
----   ---   ---\n\
-'
-###
+  echo "---   ---   --- ---   $PORT   --- ---   ---   ---"
 
-RUN sed -i 's/#Port 22/Port $PORT/g' /etc/ssh/sshd_config
+RUN sed -i "s/#Port 22/Port $PORT/g" /etc/ssh/sshd_config
 
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 kakarot
 
