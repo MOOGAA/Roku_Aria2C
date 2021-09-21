@@ -85,7 +85,7 @@ func_4() {
   
   mkdir -p \
     ~/.cache/Filebrowser \
-    ~/.cache/Rclone/
+    ~/.cache/Rclone/ \
     ~/.config/Aria2c/ \
     ~/.config/Filebrowser/ \
     ~/.config/Nginx/AriaNg/ \
