@@ -100,6 +100,8 @@ func_4() {
   func_R
   curl -fsSL git.io/aria2c.sh | bash
   func_R
+  curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
+  func_R
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
       -O ~/.config/Aria2c/dht.dat
@@ -108,7 +110,7 @@ func_4() {
       -O ~/.config/Aria2c/dht6.dat
   wget -q https://github.com/mayswind/AriaNg/releases/download/1.2.2/AriaNg-1.2.2.zip \
       -O /tmp/AriaNg.zip
-  unzip \
+  unzip -q \
     /tmp/AriaNg.zip \
       -d \
         ~/.config/AriaNg/
