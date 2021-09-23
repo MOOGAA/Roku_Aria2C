@@ -113,7 +113,7 @@ func_4() {
   unzip -q \
     /tmp/AriaNg.zip \
       -d \
-        ~/.config/AriaNg/
+        ~/.config/Nginx/AriaNg/
   func_R
   
 }
