@@ -88,7 +88,7 @@ func_4() {
     ~/.cache/Rclone/ \
     ~/.config/Aria2c/ \
     ~/.config/Filebrowser/ \
-    ~/.config/Nginx/AriaNg/ \
+    ~/.config/Nginx/Src_Html/AriaNg/ \
     ~/.config/Rclone/ \
     ~/.log/Aria2c/ \
     ~/.log/Filebrowser/ \
@@ -109,11 +109,12 @@ func_4() {
     https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat \
       -O ~/.config/Aria2c/dht6.dat
   wget -q https://github.com/mayswind/AriaNg/releases/download/1.2.2/AriaNg-1.2.2.zip \
-      -O /tmp/AriaNg.zip
+      -O /tmp/AriaNg_.zip && \
   unzip -q \
     /tmp/AriaNg.zip \
       -d \
-        ~/.config/Nginx/AriaNg/
+        ~/.config/Nginx/Src_Html/AriaNg/ && \
+  rm -rf /tmp/AriaNg_.zip
   func_R
   
 }
