@@ -1,11 +1,11 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
-RUN apk update && apk upgrade
+RUN apt update && apt upgrade
 
-RUN apk add nginx
+RUN apt install nginx
 
 CMD echo $PORT
 
-CMD sed -i "s/80/$PORT/g" /etc/nginx/http.d/default
+CMD sed -i -e 's/80/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
 
-CMD nginx -g "deamon off;" && nginx
+CMD nginx
