@@ -1,0 +1,14 @@
+{
+  "name": "my_m00n" ,
+  "description": "PaéaS mun3r0" ,
+  "keywords": ["PhaaS" , "mun3ro"] ,
+  "website": "" ,
+  "repository": "https://github.com/MOOGAA/Roku/" ,
+  "stack": "container" ,
+  "formation": {
+    "worker": {
+      "quantity": 1 ,
+      "size": "free"
+    }
+  }
+}
