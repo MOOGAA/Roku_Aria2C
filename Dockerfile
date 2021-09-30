@@ -4,7 +4,7 @@ RUN apk update && apk upgrade
 
 RUN apk add nginx
 
-RUN echo $PORT
+CMD echo $PORT
 
 #RUN sed -i "s/80/$PORT/g" /etc/nginx/http.d/default
 
