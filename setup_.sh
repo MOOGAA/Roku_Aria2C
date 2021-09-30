@@ -179,7 +179,7 @@ func_3 && func_R && \
 func_4 && func_R && \
 func_5 && func_R && \
 func_6 && func_R && \
-sed -i
+sed -i "s/80/$PORT/g" /etc/nginx/nginx.conf && \
 func_6 && \
 echo && echo && echo && \
 echo '   ---   done   ---   '
