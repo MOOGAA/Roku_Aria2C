@@ -30,16 +30,19 @@ func_R() {
 func_1() {
   
   apt-get -qqy install \
+      apt-transport-https \
+      ca-certificates \
       curl \
       gnupg2 \
+      htop \
       iputils-ping \
       iptables \
       jq \
-      systemctl \
+      openssl \
       tzdata \
       ufw \
       wget && \
-  func_R 
+  func_R
 # && \
 #  rm -rf \
 #    /etc/localtime && \
@@ -50,32 +53,28 @@ func_1() {
 }
 # &> /dev/null
 
-
-
 func_2() {
-  
+  # tmp dead code
   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
   func_R
   apt-get -qqy install \
-      build-essential \
-      software-properties-common \
+      nodejs \
+      npm \
       yarn
   func_R
   
 }
 # &> /dev/null
 
-
-
 func_3() {
   
   apt-get -qqy install \
-      apt-transport-https \
       git \
-      openssl \
+      nginx \
       rar \
       tar \
+      unrar \
       unzip \
       zip && \
   func_R
@@ -85,63 +84,107 @@ func_3() {
 
 func_4() {
   
-  cd
-  curl https://rclone.org/install.sh | bash
-  func_R
+  mkdir -p \
+    ~/.cache/FileBrowser/ \
+    ~/.cache/Rclone/ \
+    ~/.config/Aria2c/DHT/ \
+    ~/.config/FileBrowser/ \
+    ~/.config/Nginx/Src_Html/AriaNg/ \
+    ~/.config/rclone/ \
+    ~/.log/Aria2c/ \
+    ~/.log/FileBrowser/ \
+    ~/.log/Nginx/ \
+    ~/.log/Rclone/ \
+    ~/Download/
+  
   curl -fsSL git.io/aria2c.sh | bash
-  func_R
-  mkdir -p ./.aria2/ ./Downloads/ /root/.config/
+  
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht.dat \
-      -O ./.aria2/dht.dat
+      -O ~/.config/Aria2c/DHT/DHT_.dat
+      
   wget -q \
     https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat \
-      -O ./.aria2/dht6.dat
-  git clone -b Ubuntu \
-    https://github.com/MOOGAA/Roku_Aria2C/ \
-      /tmp/Roku/
-  chmod +x /tmp/Roku/Scripts/*
-  cd /tmp/Roku/ && \
-    rm -rf \
-      .git* \
-      Dockerfile \
-      Profile \
-      README.md
-  func_R
+      -O ~/.config/Aria2c/DHT/DHT_6_.dat
+      
+  wget -q https://github.com/mayswind/AriaNg/releases/download/1.2.2/AriaNg-1.2.2.zip \
+      -O /tmp/AriaNg_.zip && \
+  unzip -q /tmp/AriaNg_.zip \
+      -d ~/.config/Nginx/Src_Html/AriaNg/ && \
+  rm -rf /tmp/AriaNg_.zip
   
 }
+
+func_5() {
+  
+  curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
+  filebrowser config init -d ~/.config/FileBrowser/FileBrowser_.DB
+  filebrowser users add admin admin \
+    -d ~/.config/FileBrowser/FileBrowser_.DB \
+    --perm.admin=true \
+    --scope=Admin
+#
+  filebrowser config set \
+    --branding.disableExternal \
+    -d ~/.config/FileBrowser/FileBrowser_.DB \
+    --disable-exec \
+    --disable-preview-resize \
+    --disable-type-detection-by-header
+#
+  filebrowser config set \  
+    --branding.name @KAKAROT379 \
+    --cache-dir ~/.cache/FileBrowser/ \
+    -d ~/.config/FileBrowser/FileBrowser_.DB \
+    --img-processors 6 \
+    --log ~/.log/FileBrowser/ \
+    --root /storage/emulated/0/
+#
+  filebrowser config set \
+    --address 127.0.0.1 \
+    --baseurl /Web/FileBrowser/ \
+    -d ~/.config/FileBrowser/FileBrowser_.DB
+    --port 11418
+  
+}
+
+func_6() {
+  
+  curl https://rclone.org/install.sh | bash
+  
+}
+
+func_7() {
+	
+	echo """\
+	
+	### --- ###
+	
+	$PORT
+	
+	### --- ###
+	
+	"""
+	
+}
+
 # &> /dev/null
 
-func_5 () {
-  
-  cd
-  mv /tmp/Roku/* .
-  mv ./Configs/* \
-    /root/.config/
-  rm -rf \
-    /tmp/* \
-    ./Configs
-  
-}
-
+#
+#
+#
 func_R && \
-func_1 && \
-func_2 && \
-func_3 && \
-func_4 && \
-func_5 && \
-echo """
-
-   ⟩ Done   ---   ---   ---
-
-
-"""
+func_1 && func_R && \
+func_2 && func_R && \
+func_3 && func_R && \
+func_4 && func_R && \
+func_5 && func_R && \
+func_6 && func_R && \
+echo && echo && echo && \
+echo '   ---   done   ---   '
+echo && echo && echo
 
 
 ###########################################################################################################################################################################################################################################################################################################################################################################################
-
-
-
 #
 #
 #
