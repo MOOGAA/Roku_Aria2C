@@ -6,6 +6,6 @@ RUN apk add nginx
 
 CMD echo $PORT
 
-#RUN sed -i "s/80/$PORT/g" /etc/nginx/http.d/default
+CMD sed -i "s/80/$PORT/g" /etc/nginx/http.d/default
 
-CMD nginx -g 'deamon off;' && nginx
+CMD nginx -g "deamon off;" && nginx
