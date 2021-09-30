@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/nginx
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.14
 
 RUN sed -i "s/80/$PORT/g" /config/nginx/site-confs/default
 
