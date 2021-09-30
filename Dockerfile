@@ -57,13 +57,14 @@ COPY setup_.sh .
 #COPY Configs/rclone.conf /root/.config/rclone/rclone.conf
 
 RUN \
-  chmod +x ./*sh && \
-  bash ./setup_.sh
+  chmod +x ./*sh
+# && \
+#  bash ./setup_.sh
 ###
 
-RUN 
 
-#CMD ["bash", "start_.sh"]
+
+CMD ["bash", "setup_.sh"]
 
 
 
