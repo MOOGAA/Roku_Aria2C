@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 
-RUN apt update && apt upgrade
+RUN apt update && apt upgrade -y
 
-RUN apt install nginx
+RUN apt install nginx -y
 
 CMD echo $PORT
 
