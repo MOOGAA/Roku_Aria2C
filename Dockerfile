@@ -25,7 +25,7 @@ ADD https://github.com/just-containers/s6-overlay/releases/download/${S6_VERSION
 
 RUN \
   chmod +x /tmp/s6-overlay-amd64-installer \
-  && /tmp/s6-overlay-amd64-installer /
+  && /tmp/s6-overlay-amd64-installer / > /dev/null
 # && \
 #  rm -rf /tmp/*
 # > /dev/null
@@ -36,17 +36,17 @@ RUN \
   apt-get -qqy install \
     openssh-server \
     sudo \
-    ufw \
     nano \
     wget \
     curl \
-    git && \
-  apt-get -qqy install systemctl && \
-  apt-get -qqy install  systemd
+    git
+# && \
+#  apt-get -qqy install systemctl && \
+#  apt-get -qqy install  systemd
 
 
 
-RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 kakarot
+RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 kakarot
 
 RUN echo 'kakarot:kakarot' | chpasswd
 
