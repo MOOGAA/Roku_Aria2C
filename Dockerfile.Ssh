@@ -25,8 +25,8 @@ ARG \
 ADD https://github.com/just-containers/s6-overlay/releases/download/${S6_VERSION}/s6-overlay-${S6_ARCH}-installer /tmp/
 
 RUN \
-  chmod +x /tmp/s6-overlay-amd64-installer && \
-  /tmp/s6-overlay-amd64-installer /
+  chmod +x /tmp/s6-overlay-amd64-installer \
+  && /tmp/s6-overlay-amd64-installer /
 # && \
 #  rm -rf /tmp/*
 # > /dev/null
@@ -52,6 +52,6 @@ RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 kakarot
 
 RUN echo 'kakarot:kakarot' | chpasswd
 
-RUN service ssh start
+#RUN service ssh start
 
-CMD ["/usr/sbin/sshd","-D"]
+CMD [ "/usr/sbin/sshd" , "-D" ]
