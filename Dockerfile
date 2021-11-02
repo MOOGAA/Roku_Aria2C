@@ -52,6 +52,7 @@ USER kakarot
 RUN echo 'kakarot:kakarot' | chpasswd
 
 CMD \
+  useradd -rm -d /home/ubuntu -s /bin/bash -g root -G root -u 1001 kakarot
   sed -i "s/#Port 22/Port $PORT/g" /etc/ssh/sshd_config && \
   service ssh start && \
   echo "---   ---   --- ---   $PORT   --- ---   ---   ---" && \
