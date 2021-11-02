@@ -40,9 +40,9 @@ RUN \
     nano \
     wget \
     curl \
-    systemctl \
-    systemd \
     git && \
+  apt-get -qqy install systemctl && \
+  apt-get -qqy install  systemd && \
   echo "---   ---   --- ---   $PORT   --- ---   ---   ---"
 
 RUN sed -i "s/#Port 22/Port $PORT/g" /etc/ssh/sshd_config
