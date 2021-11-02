@@ -39,6 +39,7 @@ RUN \
     nano \
     wget \
     curl \
+    dos2unix \
     git
 # && \
 #  apt-get -qqy install systemctl && \
@@ -51,6 +52,7 @@ RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 kakarot
 RUN echo 'kakarot:kakarot' | chpasswd
 
 CMD \
+  dos2unix /etc/passwd && \
   sed -i "s/#Port 22/Port $PORT/g" /etc/ssh/sshd_config && \
   service ssh start && \
   echo "---   ---   --- ---   $PORT   --- ---   ---   ---" && \
