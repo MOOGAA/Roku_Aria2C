@@ -55,6 +55,7 @@ ENV USER_NAME='kakarot'
 RUN echo 'kakarot:kakarot' | chpasswd
 
 CMD \
+  sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config && \
   sed -i "s/2222/$PORT/g" /etc/ssh/sshd_config && \
   echo "---   ---   --- ---   $PORT   --- ---   ---   ---" && \
 #dos2unix /etc/passwd && \
