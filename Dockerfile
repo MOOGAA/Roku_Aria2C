@@ -52,8 +52,8 @@ USER kakarot
 RUN echo 'kakarot:kakarot' | chpasswd
 
 CMD \
-  dos2unix /etc/passwd && \
   sed -i "s/#Port 22/Port $PORT/g" /etc/ssh/sshd_config && \
   service ssh start && \
   echo "---   ---   --- ---   $PORT   --- ---   ---   ---" && \
   /usr/sbin/sshd -D
+#dos2unix /etc/passwd && \
