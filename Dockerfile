@@ -45,9 +45,9 @@ RUN \
 #  apt-get -qqy install systemctl && \
 #  apt-get -qqy install  systemd
 
+USER kakarot
 
-
-RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 kakarot
+#RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 kakarot
 
 RUN echo 'kakarot:kakarot' | chpasswd
 
