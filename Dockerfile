@@ -42,15 +42,16 @@ RUN \
     curl \
     git && \
   apt-get -qqy install systemctl && \
-  apt-get -qqy install  systemd && \
-  echo "---   ---   --- ---   $PORT   --- ---   ---   ---"
+  apt-get -qqy install  systemd
 
-RUN sed -i "s/#Port 22/Port $PORT/g" /etc/ssh/sshd_config
+
 
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 kakarot
 
 RUN echo 'kakarot:kakarot' | chpasswd
 
-#RUN service ssh start
-
-CMD [ "/usr/sbin/sshd" , "-D" ]
+CMD \
+  service ssh start && \
+  sed -i "s/#Port 22/Port $PORT/g" /etc/ssh/sshd_config && \
+  && echo "---   ---   --- ---   $PORT   --- ---   ---   ---" && \
+  /usr/sbin/sshd -D
