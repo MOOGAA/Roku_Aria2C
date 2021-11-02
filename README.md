@@ -1,3 +1,6 @@
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MOOGAA/Roku_Aria2C/)
+
+
 # Aria2c+AriaNg
 
 > It it recommended to find other platform than Heroku to deploy this as they are actively prevent this from deploying there.
