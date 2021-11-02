@@ -33,7 +33,6 @@ RUN \
   apt-get -qq update && \
   apt-get -qqy install \
     openssh-server \
-    openssh-server-pam \
     sudo \
     nano \
     wget \
