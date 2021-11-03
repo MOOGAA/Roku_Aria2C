@@ -51,8 +51,7 @@ RUN \
 CMD \
   sed -i "s/#Port 22/Port $PORT/g" /etc/ssh/sshd_config && \
   echo "---   ---   --- ---   $PORT   --- ---   ---   ---" && \
-  service ssh start && \
   /usr/sbin/sshd -D
   
 #sed -i "s/#Port 22/Port $PORT/g" /etc/ssh/sshd_config && \
-
+#sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/g' /etc/ssh/sshd_config
