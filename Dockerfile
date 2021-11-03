@@ -35,6 +35,7 @@ RUN \
     openssh-server \
     sudo \
     nano \
+    nmap net-tools \
     wget \
     curl \
     git
