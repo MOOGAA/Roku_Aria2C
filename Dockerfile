@@ -44,9 +44,9 @@ RUN \
 #  apt-get -qqy install  systemd
 
 
-RUN useradd -rmd /home/ubuntu -s /bin/bash -g kakarot -G root -u 1001 kakarot
+#RUN useradd -rmd /home/ubuntu -s /bin/bash -g kakarot -G root -u 1001 kakarot
 
-RUN echo 'kakarot:kakarot' | chpasswd
+#RUN echo 'kakarot:kakarot' | chpasswd
 
 CMD \
   sed -i "s/#Port 22/Port $PORT/g" /etc/ssh/sshd_config && \
