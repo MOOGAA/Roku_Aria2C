@@ -55,3 +55,9 @@ CMD \
   
 #sed -i "s/#Port 22/Port $PORT/g" /etc/ssh/sshd_config && \
 #sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+#/etc/init.d/ssh force-reload
+
+
+
+
+
